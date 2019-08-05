@@ -1,0 +1,36 @@
+{
+  "name": "fakeLottery",
+  "version": "0.0.1",
+  "description": "fake no money",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bogutski/fakeLottery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bogutski/fakeLottery/issues"
+  },
+  "homepage": "https://github.com/bogutski/fakeLottery#readme",
+  "dependencies": {
+    "eslint-plugin-jest": "^21.18.0",
+    "npm": "^6.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.10.0",
+    "jest": "^24.8.0",
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "node"
+  }
+}
