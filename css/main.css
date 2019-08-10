@@ -1,0 +1,16 @@
+body {
+    background: #9dbdd1;
+}
+
+
+.specialnumbox {
+    width: 18px;
+    margin-top: -5px;
+    background-color: #52d7f8;
+}
+
+.numbox {
+    width: 18px;
+    margin-top: -5px;
+    background-color: #d5f33e;
+}
