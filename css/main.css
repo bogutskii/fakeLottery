@@ -4,13 +4,24 @@ body {
 
 
 .specialnumbox {
-    width: 18px;
+    width: 30px;
+    height: 30px;
     margin-top: -5px;
+    font-size: x-large;
     background-color: #52d7f8;
 }
 
 .numbox {
-    width: 18px;
+    width: 30px;
+    height: 30px;
     margin-top: -5px;
     background-color: #d5f33e;
+    font-size: x-large;
+    -moz-appearance: textfield;
+}
+.numbox::-webkit-inner-spin-button {
+    display: none;
+}
+.specialnumbox::-webkit-inner-spin-button {
+    display: none;
 }

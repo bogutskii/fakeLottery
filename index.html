@@ -7,19 +7,20 @@
   <h1>Fake Lottery</h1>
 
   <ul class="inputForm" >
-    <li class="numberbox_wrapper">
+    <li class="numberbox_wrapper" >
       <div align="center">
-        <input name="Num1" type="text" maxlength="2" id="Num1" class="numbox" maxlength="2">
-        <input name="Num2" type="text" maxlength="2" id="Num2" class="numbox" maxlength="2">
-        <input name="Num3" type="text" maxlength="2" id="Num3" class="numbox" maxlength="2">
-        <input name="Num4" type="text" maxlength="2" id="Num4" class="numbox" maxlength="2">
-        <input name="Num5" type="text" maxlength="2" id="Num5" class="numbox" maxlength="2">
-        <input name="Mega" type="text" maxlength="2" id="Mega" class="specialnumbox">
+        <input name="Num1" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
+        <input name="Num2" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
+        <input name="Num3" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
+        <input name="Num4" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
+        <input name="Num5" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
+        <input name="Mega" type="number" id="Mega" class="specialnumbox" onkeyup="limit(this);">
         <label class="win-super">super</label>
       </div>
     </li>
   </ul>
-
+  <button> get result</button>
+  <p>Your number:  <span id="numStatus"></span></p>
 </head>
 <body>
 <script src = 'scripts/index.js'></script>
