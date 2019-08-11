@@ -8,11 +8,13 @@ function limit(elem) {
 function getInputVal() {
 	const inputVal = document.getElementsByClassName('numbox');
 	let allInputValues = [];
-
-	for (let i = 0; i < inputVal.length; i++) {
+	  for (let i = 0; i < inputVal.length; i++) {
+	    //if(inputVal[i].value > 47)
+	    //return ('The number can`t be more than 47'); //  ned fix
 		allInputValues.push(inputVal[i].value);
 	}
 	let res = allInputValues.sort((a, b) => a - b);
-	console.log(res);
-	return res;
+	  res.push(document.getElementsByClassName('specialnumbox')[0].value)
+  document.getElementById("numStatus").innerHTML = res;
+  return res;
 }
