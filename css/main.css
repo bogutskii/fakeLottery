@@ -1,14 +1,20 @@
 body {
-    background: #9dbdd1;
+    background: rgb(75,192,255);
+    background: radial-gradient(circle, rgba(75,192,255,1) 0%, rgba(183,198,215,0.7777485994397759) 100%);
 }
 
-
+h1 {
+    font-size: 50px;
+    background: -webkit-linear-gradient(#7c4bff, #ff4b4b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .specialNumBox {
     width: 30px;
     height: 30px;
     margin-top: -5px;
     font-size: x-large;
-    background-color: #52d7f8;
+    background-color: #f8386b;
 }
 
 .numbox {
