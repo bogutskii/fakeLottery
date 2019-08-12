@@ -3,7 +3,7 @@ body {
 }
 
 
-.specialnumbox {
+.specialNumBox {
     width: 30px;
     height: 30px;
     margin-top: -5px;
@@ -22,6 +22,6 @@ body {
 .numbox::-webkit-inner-spin-button {
     display: none;
 }
-.specialnumbox::-webkit-inner-spin-button {
+.specialNumBox::-webkit-inner-spin-button {
     display: none;
 }
