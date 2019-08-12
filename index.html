@@ -9,19 +9,20 @@
   <ul class="inputForm" >
     <li class="numberbox_wrapper" >
       <div align="center">
-        <input name="Num1" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
-        <input name="Num2" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
+        <input name="Num1" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);" required>
+        <input name="Num2" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);" required>
         <input name="Num3" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
         <input name="Num4" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
         <input name="Num5" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
-        <input name="Mega" type="number" id="Mega" class="specialnumbox" onkeyup="limit(this);">
+        <input name="Mega" type="number" id="Mega" class="specialnumbox" onkeyup="limitSpecial(this);">
         <label class="win-super">super</label>
         <button onclick="getInputVal()"> get result</button>
 
       </div>
     </li>
   </ul>
-  <p>Your number:  <span id="numStatus"></span></p>
+  <p>Your number:  <span id="userNumStatus"></span></p>
+  <p>Winning numbers :  <span id="winNumStatus"></span></p>
 </head>
 <body>
 <script src = 'scripts/index.js'></script>
