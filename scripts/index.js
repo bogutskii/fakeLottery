@@ -18,44 +18,64 @@ function limitSpecial(elem) {
 		elem.value = elem.value.substr(0, max_chars);
 	}
 }
-
 // collects all input values into an array, and sorts (except for the special value at the end)
-const getInputVal = function getInputVal() {
+const getInputVal = function () {
 	const inputVal = document.getElementsByClassName('numbox');
 	let allInputValues = [];
 	for (let i = 0; i < inputVal.length; i++) {
 		allInputValues.push(inputVal[i].value);
 	}
-	let res = allInputValues.sort((a, b) => a - b);
-	  res.push('*' + document.getElementsByClassName('specialNumBox')[0].value + '*');
+	let res = allInputValues.sort((a, b) => a - b).map(el=> Number(el));
+	let special = document.getElementsByClassName('specialNumBox')[0].value;
+	res.push('*' + special + '*');
 	document.getElementById('userNumStatus').innerHTML = res;
 	return res;
 };
 
 //randomaizing win number
-const winningNumbers = function winNumbers() {
+const winningNumbers = function () {
 	let win = [];
 	for (let i = 0; i < 20; i++) {
-		let rand1 = Math.floor(Math.random() * 69);
+		let rand1 = Math.floor(Math.random() * 68 + 1);
 		if (!win.includes(rand1)) {
 			win.push(rand1);
 		}
 	}
 	win.length = 5;
-	win.sort((a, b) => a - b).push('*' + Math.floor(Math.random() * 26) + '*');
+	win.sort((a, b) => a - b).push('*' + Math.floor(Math.random() * 25 + 1) + '*');
 	document.getElementById('winNumStatus').innerHTML = win;
 	return win;
 };
 
 //Match numbers ---------need fix---------
-const matchNumbers = function matchNum(userNum,win) {
+const matchNumbers = function (getInputVal,winningNumbers) {
 	let arr = [];
 	for(let i = 0; i < win.length; i++){
-		let temp = win().shift();
-		if(userNum.includes(temp)){
+		let temp = winningNumbers().shift();
+		if(getInputVal.includes(temp)){
 			arr.push(temp);
 		}
 	}
 	document.getElementById('matchNumStatus').innerHTML = arr;
 	return  arr;
-};
+}(getInputVal,winningNumbers);
+
+// counter
+function clickCounter() {
+	if (typeof(Storage) !== 'undefined') {
+		if (sessionStorage.clickcount) {
+			sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+		} else {
+			sessionStorage.clickcount = 1;
+		}
+		document.getElementById('CountResult').innerHTML = 'You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
+	} else {
+		document.getElementById('CountResult').innerHTML = 'Sorry, your browser does not support web storage...';
+	}
+}
+
+function clickCounterZero() {
+	sessionStorage.clickcount = 0;
+  document.getElementById('CountResult').innerHTML='You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
+}
+
