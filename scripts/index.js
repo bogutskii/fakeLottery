@@ -48,7 +48,7 @@ const winningNumbers = function () {
 };
 
 //Match numbers ---------need fix---------
-const matchNumbers = function (getInputVal,winningNumbers) {
+const matchNumbers = function () {
 	let arr = [];
 	for(let i = 0; i < win.length; i++){
 		let temp = winningNumbers().shift();
