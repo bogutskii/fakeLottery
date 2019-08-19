@@ -31,7 +31,6 @@ const getInputVal = function () {
 	document.getElementById('userNumStatus').innerHTML = res;
 	return res;
 };
-
 //randomaizing win number
 const winningNumbers = function () {
 	let win = [];
@@ -43,25 +42,29 @@ const winningNumbers = function () {
 	}
 	win.length = 5;
 	win.sort((a, b) => a - b).push('*' + Math.floor(Math.random() * 25 + 1) + '*');
-	document.getElementById('winNumStatus').innerHTML = win;
 	return win;
 };
 
 //Match numbers ---------need fix---------
 const matchNumbers = function () {
+	let win = 0;
+	let user = getInputVal();
 	let arr = [];
-	for(let i = 0; i < win.length; i++){
-		let temp = winningNumbers().shift();
-		if(getInputVal.includes(temp)){
+	document.getElementById('winNumStatus').innerHTML = win = winningNumbers();
+
+	for(let i = 0; i < winningNumbers().length; i++){
+		let temp = win.shift();
+		if(user.includes(temp)){
 			arr.push(temp);
 		}
 	}
+
 	document.getElementById('matchNumStatus').innerHTML = arr;
 	return  arr;
-}(getInputVal,winningNumbers);
+};
 
 // counter
-function clickCounter() {
+const clickCounter =function () {
 	if (typeof(Storage) !== 'undefined') {
 		if (sessionStorage.clickcount) {
 			sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
@@ -76,6 +79,6 @@ function clickCounter() {
 
 function clickCounterZero() {
 	sessionStorage.clickcount = 0;
-  document.getElementById('CountResult').innerHTML='You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
+	document.getElementById('CountResult').innerHTML='You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
 }
 
