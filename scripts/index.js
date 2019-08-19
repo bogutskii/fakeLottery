@@ -65,7 +65,7 @@ const matchNumbers = function () {
 
 // counter
 const clickCounter =function () {
-	if (typeof(Storage) !== 'undefined') {
+	if (typeof(Storage)) {
 		if (sessionStorage.clickcount) {
 			sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
 		} else {
