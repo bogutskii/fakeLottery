@@ -1,4 +1,5 @@
 // limit for entering more than 69
+let maxWinStatus = 0;
 function limit(elem) {
 	let max_chars = 2;
 	if (elem.value > 69 ) {
