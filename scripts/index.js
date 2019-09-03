@@ -1,3 +1,4 @@
+let maxWinNum = '';
 // limit for entering more than 69
 let maxWinStatus = 0;
 function limit(elem) {
@@ -61,6 +62,10 @@ const matchNumbers = function () {
 	}
 
 	document.getElementById('matchNumStatus').innerHTML = arr;
+	if (arr.length >= maxWinNum.length){
+		maxWinNum = arr;
+    document.getElementById('maxWinStatus').innerHTML = maxWinNum;
+	}
 	return  arr;
 };
 
@@ -76,7 +81,7 @@ const clickCounter =function () {
 	} else {
 		document.getElementById('CountResult').innerHTML = 'Sorry, your browser does not support web storage...';
 	}
-}
+};
 
 function clickCounterZero() {
 	sessionStorage.clickcount = 0;
