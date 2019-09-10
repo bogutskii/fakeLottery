@@ -21,7 +21,7 @@ function limitSpecial(elem) {
 	}
 }
 // collects all input values into an array, and sorts (except for the special value at the end)
-const getInputVal = function () {
+const getInputVal =  () => {
 	const inputVal = document.getElementsByClassName('numbox');
 	let allInputValues = [];
 	for (let i = 0; i < inputVal.length; i++) {
@@ -34,7 +34,7 @@ const getInputVal = function () {
 	return res;
 };
 //randomaizing win number
-const winningNumbers = function () {
+const randomizer = () => {
 	let win = [];
 	for (let i = 0; i < 20; i++) {
 		let rand1 = Math.floor(Math.random() * 68 + 1);
@@ -46,9 +46,15 @@ const winningNumbers = function () {
 	win.sort((a, b) => a - b).push('*' + Math.floor(Math.random() * 25 + 1) + '*');
 	return win;
 };
+const randomUserNumber = () => randomizer();
+const winningNumbers = randomizer;
+function check () {
+console.log(randomUserNumber())
+  console.log(randomUserNumber)
 
+}
 //Match numbers ---------need fix---------
-const matchNumbers = function () {
+const matchNumbers =  () => {
 	let win = 0;
 	let user = getInputVal();
 	let arr = [];
@@ -70,7 +76,7 @@ const matchNumbers = function () {
 };
 
 // counter
-const clickCounter =function () {
+const clickCounter = () => {
 	if (typeof(Storage)) {
 		if (sessionStorage.clickcount) {
 			sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;

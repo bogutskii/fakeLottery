@@ -31,3 +31,6 @@ h1 {
 .specialNumBox::-webkit-inner-spin-button {
     display: none;
 }
+#inputBank{
+    width: 90px
+}
