@@ -1,33 +1,50 @@
 let maxWinNum = '';
 // limit for entering more than 69
-let maxWinStatus = 0;
+//let maxWinStatus = 0;
+
+// bank credit
+let  credits = 2;
+const getBankCredit = () => {
+  credits = document.getElementById('inputBank').value;
+  document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
+  return credits;
+};
+const minusCredit = () => {
+  if (credits >2 ){credits-=2;}
+ else if(credits <= 1){return alert ('refill credits')}
+  document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
+
+}
+// limit on enter numbers
 function limit(elem) {
 	let max_chars = 2;
-	if (elem.value > 69 ) {
+	if (elem.value > 69) {
 		elem.value = elem.value.substr(0, max_chars - 1);
 	}
 	else if (elem.value.length > max_chars) {
 		elem.value = elem.value.substr(0, max_chars);
 	}
 }
+
 // limit for special  entering more than 26
 function limitSpecial(elem) {
 	let max_chars = 2;
-	if (elem.value > 26 ) {
+	if (elem.value > 26) {
 		elem.value = elem.value.substr(0, max_chars - 1);
 	}
 	else if (elem.value.length > max_chars) {
 		elem.value = elem.value.substr(0, max_chars);
 	}
 }
+
 // collects all input values into an array, and sorts (except for the special value at the end)
-const getInputVal =  () => {
+const getInputVal = () => {
 	const inputVal = document.getElementsByClassName('numbox');
 	let allInputValues = [];
 	for (let i = 0; i < inputVal.length; i++) {
 		allInputValues.push(inputVal[i].value);
 	}
-	let res = allInputValues.sort((a, b) => a - b).map(el=> Number(el));
+	let res = allInputValues.sort((a, b) => a - b).map(el => Number(el));
 	let special = document.getElementsByClassName('specialNumBox')[0].value;
 	res.push('*' + special + '*');
 	document.getElementById('userNumStatus').innerHTML = res;
@@ -48,38 +65,38 @@ const randomizer = () => {
 };
 const randomUserNumber = () => randomizer();
 const winningNumbers = randomizer;
-function check () {
-console.log(randomUserNumber())
-  console.log(randomUserNumber)
 
+function check() {
+	console.log(randomUserNumber());
 }
+
 //Match numbers ---------need fix---------
-const matchNumbers =  () => {
+const matchNumbers = () => {
 	let win = 0;
 	let user = getInputVal();
 	let arr = [];
 	document.getElementById('winNumStatus').innerHTML = win = winningNumbers();
 
-	for(let i = 0; i < winningNumbers().length; i++){
+	for (let i = 0; i < winningNumbers().length; i++) {
 		let temp = win.shift();
-		if(user.includes(temp)){
+		if (user.includes(temp)) {
 			arr.push(temp);
 		}
 	}
 
 	document.getElementById('matchNumStatus').innerHTML = arr;
-	if (arr.length >= maxWinNum.length){
+	if (arr.length >= maxWinNum.length) {
 		maxWinNum = arr;
-    document.getElementById('maxWinStatus').innerHTML = maxWinNum;
+		document.getElementById('maxWinStatus').innerHTML = maxWinNum;
 	}
-	return  arr;
+	return arr;
 };
 
 // counter
 const clickCounter = () => {
 	if (typeof(Storage)) {
 		if (sessionStorage.clickcount) {
-			sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+			sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
 		} else {
 			sessionStorage.clickcount = 1;
 		}
@@ -91,6 +108,6 @@ const clickCounter = () => {
 
 function clickCounterZero() {
 	sessionStorage.clickcount = 0;
-	document.getElementById('CountResult').innerHTML='You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
+	document.getElementById('CountResult').innerHTML = 'You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
 }
 
