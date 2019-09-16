@@ -1,20 +1,21 @@
 let maxWinNum = '';
+let randomNum = [];
 // limit for entering more than 69
 //let maxWinStatus = 0;
 
 // bank credit
 let  credits = 2;
 const getBankCredit = () => {
-  credits = document.getElementById('inputBank').value;
-  document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
-  return credits;
+	credits = document.getElementById('inputBank').value;
+	document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
+	return credits;
 };
 const minusCredit = () => {
-  if (credits >2 ){credits-=2;}
- else if(credits <= 1){return alert ('refill credits')}
-  document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
+	if (credits >2 ){credits-=2;}
+	else if(credits <= 1){return alert ('refill credits');}
+	document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
 
-}
+};
 // limit on enter numbers
 function limit(elem) {
 	let max_chars = 2;
@@ -66,8 +67,14 @@ const randomizer = () => {
 const randomUserNumber = () => randomizer();
 const winningNumbers = randomizer;
 
-function check() {
-	console.log(randomUserNumber());
+// entering random numbers in input fields
+function inputRandom() {
+	randomNum = randomUserNumber();
+	for(let i = 0; i <5; i++){
+		console.log(document.getElementsByClassName('numbox')[i].value)
+		document.getElementsByClassName('numbox')[i].value = randomNum[i]+ '';
+	}
+  document.getElementsByClassName('specialNumBox')[0].value = randomNum[5].split('*').join('');
 }
 
 //Match numbers ---------need fix---------
@@ -83,7 +90,6 @@ const matchNumbers = () => {
 			arr.push(temp);
 		}
 	}
-
 	document.getElementById('matchNumStatus').innerHTML = arr;
 	if (arr.length >= maxWinNum.length) {
 		maxWinNum = arr;

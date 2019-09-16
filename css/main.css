@@ -34,3 +34,15 @@ h1 {
 #inputBank{
     width: 90px
 }
+
+.numboxBank {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    background-color: #d5f33e;
+    font-size: x-large;
+    -moz-appearance: textfield;
+}
+.numboxBank::-webkit-inner-spin-button {
+    display: none;
+}
