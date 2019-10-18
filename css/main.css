@@ -10,15 +10,15 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 .specialNumBox {
-    width: 30px;
-    height: 30px;
+    width: 45px;
+    height: 40px;
     margin-top: -5px;
     font-size: x-large;
     background-color: #f8386b;
 }
 
 .numbox {
-    width: 30px;
+    width: 45px;
     height: 30px;
     margin-top: -5px;
     background-color: #d5f33e;
