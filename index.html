@@ -5,17 +5,21 @@
   <title>Fake lottery</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
   <h1>Fake Lottery</h1>
-  <div>
+  <div align="center">
   <input id="inputBank" type = "number" class="numboxBank" onkeypress="this.value=this.value.substring(0,4);"size="6">
     <button onclick="getBankCredit()">bank</button>
 
-    <button onclick="inputRandom()">random</button>
+
 
   </div>
   <ul class="inputForm" >
     <li class="numberbox_wrapper" >
       <div align="center">
+        <button onclick="inputRandom()">random</button>
         <input name="Num1" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);" required>
         <input name="Num2" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);" required>
         <input name="Num3" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
@@ -24,11 +28,12 @@
         <input name="Mega" type="number" id="Mega" class="specialNumBox" onkeyup="limitSpecial(this);">
         <button onclick="(clickCounter(),getInputVal(),matchNumbers(),minusCredit())"> PLAY </button>
           <div id="CountResult"></div>
-        <button onclick="clickCounterZero()"> resset count </button>
+        <button onclick="clickCounterZero()"> Reset count </button>
       </div>
     </li>
     <li><span id="bankCredit"></li>
   </ul>
+
   <table>
     <tr>
     <td><p>Your number: </p></td>
@@ -49,10 +54,6 @@
     </tr>
     </table>
 
-
-
-</head>
-<body>
 <script src = 'scripts/index.js'></script>
 
 </body>

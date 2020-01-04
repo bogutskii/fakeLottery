@@ -71,7 +71,6 @@ const winningNumbers = randomizer;
 function inputRandom() {
 	randomNum = randomUserNumber();
 	for(let i = 0; i <5; i++){
-		console.log(document.getElementsByClassName('numbox')[i].value)
 		document.getElementsByClassName('numbox')[i].value = randomNum[i]+ '';
 	}
   document.getElementsByClassName('specialNumBox')[0].value = randomNum[5].split('*').join('');
