@@ -4,18 +4,23 @@ let randomNum = [];
 //let maxWinStatus = 0;
 
 // bank credit
-let  credits = 2;
+let credits = 2;
 const getBankCredit = () => {
 	credits = document.getElementById('inputBank').value;
-	document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
+	document.getElementById('bankCredit').innerHTML = 'You have ' + credits + ' credits';
 	return credits;
 };
 const minusCredit = () => {
-	if (credits >2 ){credits-=2;}
-	else if(credits <= 1){return alert ('refill credits');}
-	document.getElementById('bankCredit').innerHTML = 'You have ' +  credits + ' credits';
+	if (credits >= 2) {
+		credits -= 2;
+	}
+	else if (credits <= 1) {
+		return alert('refill credits');
+	}
+	document.getElementById('bankCredit').innerHTML = 'You have ' + credits + ' credits';
 
 };
+
 // limit on enter numbers
 function limit(elem) {
 	let max_chars = 2;
@@ -68,13 +73,13 @@ const randomUserNumber = () => randomizer();
 const winningNumbers = randomizer;
 
 // entering random numbers in input fields
-function inputRandom() {
+const inputRandom = () => {
 	randomNum = randomUserNumber();
-	for(let i = 0; i <5; i++){
-		document.getElementsByClassName('numbox')[i].value = randomNum[i]+ '';
+	for (let i = 0; i < 5; i++) {
+		document.getElementsByClassName('numbox')[i].value = randomNum[i] + '';
 	}
-  document.getElementsByClassName('specialNumBox')[0].value = randomNum[5].split('*').join('');
-}
+	document.getElementsByClassName('specialNumBox')[0].value = randomNum[5].split('*').join('');
+};
 
 //Match numbers ---------need fix---------
 const matchNumbers = () => {
@@ -111,8 +116,8 @@ const clickCounter = () => {
 	}
 };
 
-function clickCounterZero() {
+const clickCounterZero = () => {
 	sessionStorage.clickcount = 0;
 	document.getElementById('CountResult').innerHTML = 'You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
-}
+};
 
