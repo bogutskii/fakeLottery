@@ -65,15 +65,22 @@ const getInputVal = () => {
 //randomaizing win number
 const randomizer = () => {
 	let win = [];
-	for (let i = 0; i < 20; i++) {
+	let spec = [];
+	for (let i = 0; i < 25; i++) {
 		let rand1 = Math.floor(Math.random() * 68 + 1);
 		if (!win.includes(rand1)) {
 			win.push(rand1);
 		}
 	}
-	win = [...new Set(win)]
+	win = [...new Set(win)];
 	win.length = 5;
-	win.sort((a, b) => a - b).push('*' + Math.floor(Math.random() * 25 + 1) + '*');
+	for (let i = 0; i < 25; i++) {
+		let rand1 = Math.floor(Math.random() * 24 + 1);
+		if (!win.includes(rand1)) {
+			spec.push(rand1);
+		}
+	}
+	win.sort((a, b) => a - b).push('*' + spec[Math.floor(Math.random() * spec.length)] + '*');
 	return win;
 };
 const randomUserNumber = () => randomizer();
@@ -130,4 +137,3 @@ const clickCounterZero = () => {
 	sessionStorage.clickcount = 0;
 	document.getElementById('CountResult').innerHTML = 'You have clicked the button ' + sessionStorage.clickcount + ' time(s) in this session.';
 };
-
