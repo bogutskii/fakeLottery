@@ -11,47 +11,57 @@
   <h1>Fake Lottery</h1>
   <div align="center">
   <input id="inputBank" type = "number" class="numboxBank" onkeypress="this.value=this.value.substring(0,2);"size="3">
-    <button class = "btn btn4" onclick="getBankCredit()">bank</button>
+    <button class = "btn btn1" onclick="getBankCredit()">bank</button>
 
 
   </div>
   <div class="inputForm" >
     <div class="numberbox_wrapper" >
       <div align="center">
-        <button  class = "btn btn3" onclick="inputRandom()">random</button>
+        <button  class = "btn btn1" onclick="inputRandom()">random</button>
         <input name="Num1" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);" required>
         <input name="Num2" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);" required>
         <input name="Num3" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
         <input name="Num4" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
         <input name="Num5" type="number" id="numBoxId" class="numbox" onkeyup="limit(this);">
         <input name="Mega" type="number" id="Mega" class="specialNumBox" onkeyup="limitSpecial(this);">
-        <button class = "btn btn2" onclick="(clickCounter(),getInputVal(),matchNumbers(),minusCredit())"> PLAY </button>
+        <button class = "btn btn1" onclick="(clickCounter(),getInputVal(),matchNumbers(),minusCredit())"> PLAY </button>
           <div id="CountResult"></div>
         <button  class = "btn btn1" onclick="clickCounterZero()"> reset count </button>
       </div>
     </div>
-    <div><span id="bankCredit"></div>
-  </div>
 
-  <table>
+
+
+
+
+  <table border = "1px solid" align="center">
     <tr>
-    <td><p>Your number: </p></td>
-      <td><span id="userNumStatus"></span></td>
+      <td>You have:</td>
+      <td> <span id="bankCredit"></span></td>
     </tr>
+
     <tr>
-      <td><p>Winning numbers: </p></td>
-      <td> <span id="winNumStatus"></span></td>
+      <td>Your number:</td>
+      <td><span id="userNumStatus"></span> </td>
     </tr>
+
     <tr>
-      <td><p> Matching numbers:  </p></td>
+      <td>Winning numbers:</td>
+      <td><span id="winNumStatus"></span></td>
+    </tr>
+
+    <tr>
+      <td>Matching numbers:</td>
       <td><span id="matchNumStatus"></span></td>
     </tr>
 
     <tr>
-      <td><p> Maximum win:</p></td>
+      <td>Maximum win:</td>
       <td><span id="maxWinStatus"></span></td>
     </tr>
-    </table>
+
+  </table>
 
 <script src = 'scripts/index.js'></script>
 

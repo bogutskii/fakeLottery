@@ -1,15 +1,21 @@
 let maxWinNum = '';
 let randomNum = [];
+// bank credit
+let credits = 0;
 // limit for entering more than 69
 //let maxWinStatus = 0;
 
-// bank credit
-let credits = 2;
+
+document.getElementById('bankCredit').innerHTML = 0 + ' credits';
+document.getElementById('userNumStatus').innerHTML = '0,0,0,0,0,*0*';
+document.getElementById('winNumStatus').innerHTML = '0,0,0,0,0,*0*';
+
 const getBankCredit = () => {
 	credits = document.getElementById('inputBank').value;
-	document.getElementById('bankCredit').innerHTML = 'You have ' + credits + ' credits';
+	document.getElementById('bankCredit').innerHTML = credits + ' credits';
 	return credits;
 };
+
 const minusCredit = () => {
 	if (credits >= 2) {
 		credits -= 2;
@@ -17,7 +23,7 @@ const minusCredit = () => {
 	else if (credits <= 1) {
 		return alert('refill credits');
 	}
-	document.getElementById('bankCredit').innerHTML = 'You have ' + credits + ' credits';
+	document.getElementById('bankCredit').innerHTML = credits + ' credits';
 
 };
 
@@ -65,6 +71,7 @@ const randomizer = () => {
 			win.push(rand1);
 		}
 	}
+	win = [...new Set(win)]
 	win.length = 5;
 	win.sort((a, b) => a - b).push('*' + Math.floor(Math.random() * 25 + 1) + '*');
 	return win;
@@ -83,6 +90,9 @@ const inputRandom = () => {
 
 //Match numbers ---------need fix---------
 const matchNumbers = () => {
+	if (credits < 2) {
+		return 'Refil credit';
+	}
 	let win = 0;
 	let user = getInputVal();
 	let arr = [];
