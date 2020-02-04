@@ -1,1 +1,2 @@
-# fakeLoterry
+And welcome to the lottery-dependents, here you also won’t win anything, but you won’t lose either.
+The application is made on the terms of the famous lottery. Where you can play for free without losing anything and test your luck. A simple example of using standard random methods in Java Script.
